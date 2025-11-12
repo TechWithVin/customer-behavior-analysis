@@ -20,7 +20,7 @@ This project explores **shopping behavior** through **3,900 real transactions**,
 ## 📊 Dashboard Preview  
 
 <p align="center">
-  <img src="images/dashboard_preview.png" alt="Power BI Dashboard Preview" width="800"/>
+  <img src="assets/dashboard.png" alt="Power BI Dashboard Preview" width="800"/>
   <br>
   <em>Interactive Power BI dashboard showing customer segmentation, revenue by age group, and top-rated products.</em>
 </p>
@@ -103,19 +103,3 @@ This project explores **shopping behavior** through **3,900 real transactions**,
 | **Version Control** | Git & GitHub |
 
 ---
-
-## 📂 Repository Structure  
-
-```bash
-├── data/
-│   └── customer_shopping_behavior.csv
-├── notebooks/
-│   └── data_cleaning_and_eda.ipynb
-├── sql/
-│   └── analysis_queries.sql
-├── dashboard/
-│   └── powerbi_dashboard.pbix
-├── images/
-│   └── dashboard_preview.png
-├── README.md
-└── requirements.txt
