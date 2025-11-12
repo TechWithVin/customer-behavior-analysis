@@ -1,101 +1,96 @@
-🛍️ Customer Shopping Behavior Analysis
-📖 Project Overview
+🛒 Customer Shopping Behavior Analysis
 
-This project analyzes customer shopping behavior using transactional data from 3,900 purchases across various product categories.
-The main goal is to uncover spending patterns, customer segments, product preferences, and subscription behavior to support data-driven business decisions.
 
-🧾 Dataset Summary
+🎯 Overview
+
+Ever wondered what makes customers click “Buy Now”?
+This project explores shopping behavior through 3,900 real transactions, uncovering insights about spending habits, product trends, and loyalty patterns — all backed by Python, PostgreSQL, and Power BI.
+
+🔍 The goal:
+
+Transform raw transaction data into actionable business insights for smarter marketing and retention strategies.
+
+📊 Key Insights at a Glance
+
+✅ Female customers contributed slightly more to total revenue
+✅ Express shipping users tend to spend higher per transaction
+✅ Loyal customers (≥5 purchases) are 2x more likely to have subscriptions
+✅ Some categories rely heavily on discounts — a red flag for profitability
+✅ The 25–40 age group dominates total revenue
+
+<details> <summary>🧾 <b>Dataset Summary</b> (click to expand)</summary>
 Feature Type	Description
 Rows	3,900
 Columns	18
-Key Features	Customer demographics, purchase details, and shopping behavior
-Missing Data	37 missing values in review_rating column
-Key Attributes
+Missing Values	37 in review_rating
+Key Features	Age, Gender, Subscription, Purchase Amount, Category, Season, Discount, Rating, Shipping Type
 
-Demographics: Age, Gender, Location, Subscription Status
+📁 Categories analyzed:
+Fashion, Electronics, Groceries, Beauty, Home Decor, Sports, and more.
 
-Purchase Details: Item Purchased, Category, Amount, Season, Size, Color
-
-Behavioral Features: Discount Applied, Promo Code Used, Frequency of Purchases, Review Rating, Shipping Type
-
+</details>
 🧹 Data Preparation (Python)
 
-Main steps conducted in Python (Pandas):
+➡️ Step-by-step data wrangling:
 
-Data Loading: Imported dataset using pandas
+Loaded and explored dataset with pandas
 
-Exploration: Used df.info() and df.describe() for data overview
+Handled missing review_rating using category-based median
 
-Missing Data Handling: Filled missing review ratings with median per category
+Standardized columns to snake_case
 
-Column Standardization: Renamed columns to snake_case
+Engineered new features:
 
-Feature Engineering:
+age_group (binned age values)
 
-Created age_group by binning ages
+purchase_frequency_days
 
-Created purchase_frequency_days
+Removed redundant column: promo_code_used
 
-Redundancy Check: Dropped promo_code_used (redundant with discount_applied)
+Integrated final dataset into PostgreSQL for SQL-based business queries
 
-Database Integration: Loaded cleaned data into PostgreSQL for SQL analysis
+🧮 SQL Business Analysis
 
-🧮 SQL Analysis (PostgreSQL)
+Here’s what we discovered using PostgreSQL:
 
-Performed SQL-based analysis to extract business insights:
+Query	Insight
+1. Revenue by Gender	Compare total revenue by male vs female
+2. Discount Users	Identify customers who spend high even with discounts
+3. Top 5 Products by Rating	Find the most loved products
+4. Shipping Type Comparison	Standard vs Express spending habits
+5. Subscribers vs Non-Subscribers	Which group brings more revenue
+6. Discount-Dependent Products	Products that rely heavily on discounts
+7. Customer Segmentation	New, Returning, and Loyal customers
+8. Top 3 Products per Category	Discover category champions
+9. Repeat Buyers vs Subscription	Does loyalty drive subscriptions?
+10. Revenue by Age Group	Which age group drives revenue the most
+📈 Power BI Dashboard
 
-Revenue by Gender – Compare male vs female revenue
+💡 An interactive dashboard was created in Power BI to visualize:
 
-High-Spending Discount Users – Customers using discounts but spending above average
+Total revenue by gender, age, and subscription status
 
-Top 5 Products by Rating – Highest average review scores
+Product performance and rating
 
-Shipping Type Comparison – Standard vs Express average purchase
+Discount dependency per product
 
-Subscribers vs Non-Subscribers – Revenue and spending comparison
+Shipping trends and purchase frequency
 
-Discount-Dependent Products – Products with the highest discount usage
+🎥 (Optional: Add a dashboard screenshot or GIF preview here)
 
-Customer Segmentation – Classify into New, Returning, and Loyal customers
+💼 Business Recommendations
 
-Top 3 Products per Category – Identify most-purchased items per category
+💬 Data tells a story — here’s what we learned:
 
-Repeat Buyers & Subscriptions – Correlation between frequency and subscriptions
-
-Revenue by Age Group – Total revenue by age segment
-
-📊 Power BI Dashboard
-
-A fully interactive Power BI dashboard was developed to visualize:
-
-Revenue distribution
-
-Top products
-
-Subscription patterns
-
-Customer segmentation
-
-Shipping preferences
-
-💡 Business Recommendations
-
-Boost Subscriptions: Offer exclusive benefits to increase sign-ups
-
-Customer Loyalty Program: Reward repeat buyers to increase retention
-
-Review Discount Policy: Ensure discounts improve sales without hurting profit
-
-Product Positioning: Highlight top-rated and high-performing products
-
-Targeted Marketing: Focus on high-revenue age groups and express-shipping users
-
-🧰 Tools Used
-
-Python: pandas, numpy, matplotlib, seaborn
-
-Database: PostgreSQL
-
-Visualization: Power BI
-
-Version Control: Git & GitHub
+Strategy	Action
+Boost Subscriptions	Offer exclusive benefits and perks
+Loyalty Program	Reward returning buyers
+Discount Review	Balance between conversion and profit margin
+Top-Rated Products	Prioritize in ads and placement
+Targeted Marketing	Focus on high-value age segments and express users
+⚙️ Tools & Technologies
+Category	Tools
+Programming	Python (pandas, numpy, matplotlib, seaborn)
+Database	PostgreSQL
+Visualization	Power BI
+Version Control	Git & GitHub
